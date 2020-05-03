@@ -235,7 +235,7 @@ import CoreGraphics
                     
                     textLayer.sizeWidthToFit()
                     
-                    textLayer.frame = CGRectMake(centerPoint.x - textLayer.bounds.width/2, centerPoint.y - textLayer.bounds.height/2, textLayer.bounds.width, textLayer.bounds.height)
+                    textLayer.frame = CGRectMake(centerPoint.x - textLayer.bounds.width/2, centerPoint.y + textLayer.bounds.height/2 + 8, textLayer.bounds.width, textLayer.bounds.height)
                     
                     self.layer.addSublayer(textLayer)
                 }
