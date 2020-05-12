@@ -36,12 +36,15 @@ class ExempleViewController: UIViewController {
     NSLayoutConstraint.activate([horizontalConstraint, verticalConstraint, widthConstraint, heightConstraint])
   
     // Customise the progress bar here
+     self.progressBar.displayStepText = true
+     self.progressBar.isRTL = true
     self.progressBar.numberOfPoints = 4
     self.progressBar.lineHeight = 15
     self.progressBar.radius = 20
     self.progressBar.progressRadius = 15
     self.progressBar.progressLineHeight = 10
-    self.progressBar.isRTL = true
+   
+   
   
     self.progressBar.currentIndex = 1
     self.progressBar.delegate = self

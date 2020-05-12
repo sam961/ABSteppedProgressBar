@@ -41,8 +41,6 @@ import CoreGraphics
         didSet{
                if self.isRTL == true {
                     self.transform = CGAffineTransform(scaleX: -1, y: 1)
-                }else{
-                 self.transform = CGAffineTransform.identity
                 }
         }
     }
@@ -375,8 +373,6 @@ import CoreGraphics
     
     if self.isRTL == true {
          textLayer.setAffineTransform(CGAffineTransform(scaleX: -1, y: 1))
-    }else{
-        textLayer.setAffineTransform(CGAffineTransform.identity)
     }
     self.layer.addSublayer(textLayer)
     
