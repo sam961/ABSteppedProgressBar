@@ -36,6 +36,16 @@ import CoreGraphics
       self._setNeedsRedraw()
     }
   }
+    
+    open var isRTL: Bool = false {
+        didSet{
+               if self.isRTL == true {
+                    self.transform = CGAffineTransform(scaleX: -1, y: 1)
+                }else{
+                 self.transform = CGAffineTransform.identity
+                }
+        }
+    }
   
   /// The current selected index
   open var currentIndex: Int = 0 {
@@ -235,6 +245,8 @@ import CoreGraphics
     self.layer.addSublayer(self._progressLayer)
     self._progressLayer.mask = self._maskLayer
     
+ 
+    
     self.contentMode = UIView.ContentMode.redraw
   }
   
@@ -359,6 +371,12 @@ import CoreGraphics
     } else {
       textLayer = CATextLayer()
       self._textLayers[index] = textLayer
+    }
+    
+    if self.isRTL == true {
+         textLayer.setAffineTransform(CGAffineTransform(scaleX: -1, y: 1))
+    }else{
+        textLayer.setAffineTransform(CGAffineTransform.identity)
     }
     self.layer.addSublayer(textLayer)
     

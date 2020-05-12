@@ -41,6 +41,7 @@ class ExempleViewController: UIViewController {
     self.progressBar.radius = 20
     self.progressBar.progressRadius = 15
     self.progressBar.progressLineHeight = 10
+    self.progressBar.isRTL = true
   
     self.progressBar.currentIndex = 1
     self.progressBar.delegate = self
@@ -92,7 +93,7 @@ extension ExempleViewController: ABSteppedProgressBarDelegate {
     let text: String
     switch index {
     case 0:
-      text = "A"
+      text = "سلام"
     case 1:
       text = "B"
     case 2:
